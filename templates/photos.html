@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+<script src="{{ url_for('static', filename='js/gallery.js') }}"></script>
+{% block title %}Dock - Photos{% endblock %}
+
+{% block category %}Photos{% endblock %}
+
+{% block content %}
+<div class="gallery">
+    {% for photo in photos %}
+    <div class="photo">
+        <img src="{{ url_for('static', filename='photos/' + photo.filename) }}" alt="{{ photo.alt }}" onclick="clicked_img(this);">
+    </div>
+    {% endfor %}
+</div>
+<div id="lightbox">
+    <img id="lightbox-img" onclick="do_close();" alt="Zoomed Image">
+    <span id="close" onclick="do_close();">&times;</span>
+</div>
+{% endblock %}

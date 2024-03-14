@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Serif+SC&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto+Serif+SC', sans-serif;
+    background: url('bkgrnd.png') center center/cover fixed;
+    box-sizing: border-box;
+}
+
+header {
+    position: relative;
+   /* max-width: 1200px;*/
+    margin: 20px auto;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+}
+
+.logo, #category-header, .main-menu {
+    text-align: center;
+    background: transparent center center no-repeat;
+}
+
+.logo {
+    
+    line-height: 60px;
+    font-size: 36px;
+    color: #340f0f;
+    font-weight: 700;
+    text-decoration: tomato;
+    background: transparent;
+    background: url('bkgrnd.png') center center/cover no-repeat;
+}
+
+#content {
+    display: block;
+    margin: 20 auto;
+    background-color:#898686;
+}
+
+.center-logo {
+    display: block;
+    margin: 0 auto;
+    width: 300px; /* Example width */
+    height: 300px; /* Example height */
+    max-width: 100%; /* Limit the maximum width to prevent image overflow */
+    max-height: 100%; /* Limit the maximum height to prevent image overflow */
+}
+
+#category-header {
+    font-family: "Courier New";
+    line-height: 60px;
+    font-size: 20px;
+    color: #000000;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0 20px;
+    background: rgba(0, 0, 0, 0.8) url('bkgrnd.png') center center no-repeat; /* Set background to black with 0.8 opacity */
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    display: block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #262626;
+    transition: 0.5s;
+}
+
+nav ul li a.active, nav ul li a:hover, .main-menu {
+    font-family: "Courier New";
+    line-height: 60px;
+    font-size: 20px;
+    color: #b72626;
+    background: url('bkgrnd.png') center center/cover no-repeat;
+    font-weight: 700;
+}
+
+.mean-toggle {
+    
+    background: url('bkgrnd.png') center center/cover no-repeat;
+}
+
+@media (max-width: 768px) {
+    .mean-toggle {
+        display: block;
+        float: right;
+        cursor: pointer;
+        text-align: center;
+        font-size: 30px;
+        color: #b61515;
+        margin: 10px;
+    }
+
+    .mean-toggle:before {
+        content: '\f0c9';
+        font-family: fontAwesome;
+        line-height: 40px;
+        background-color: #585353;
+    }
+
+    .mean-toggle.active:before {
+        content: '\f00d';
+    }
+
+    nav {
+        display: none;
+    }
+
+    nav.active {
+        display: block;
+        width: 100%;
+    }
+
+    nav.active ul {
+        display: block;
+    }
+
+    nav.active ul li {
+        font-family: "Courier New";
+        line-height: 60px;
+        font-size: 20px;
+        padding: 0 20px;
+        color: #7b1212;
+        font-weight: 700;
+        text-decoration: none;
+        background: url('bkgrnd.png') center center/cover no-repeat;
+        margin: 0;
+        text-align: center;
+    }
+
+    .project-link {
+        background-color: #898686;
+    }
+
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust the minimum width of each column as needed */
+        gap: 20px; /* Adjust the gap between grid items */
+    }
+    
+    /* Ensure each photo retains its aspect ratio */
+    .photo img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        cursor: pointer; /* Add cursor pointer to indicate clickable */
+    }
+    
+    /* Style the lightbox */
+    #lightbox {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 999;
+    }
+    
+    #lightbox-img {
+        display: block;
+        margin: auto;
+        max-width: 90%;
+        max-height: 90%;
+        cursor: pointer; /* Add cursor pointer to indicate clickable */
+    }
+    
+    #close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 40px;
+        color: white;
+        cursor: pointer; /* Add cursor pointer to indicate clickable */
+    }
+}
